@@ -1,13 +1,13 @@
 use smartGarden
 go
 
-CREATE PROCEDURE pa_gardensUser
-	@user_id int
-as
-	SELECT g_ID, g_createdAt, g_name, g_description from garden_user
-	join gardens on gu_garden = g_ID
-	where gu_user = @user_id;
+select g_ID, g_createdAt, g_name
+from garden_user 
+join gardens on gu_garden = g_ID
+where gu_user = 1
 go
+
+
 
 CREATE PROCEDURE pa_sensorType
 	@id varchar(3)
@@ -74,3 +74,47 @@ go
 
 execute pa_getReadings 'SRTMP','SG21AA04', 5
 
+execute pa_getGardenSensor 'SG21AA01','SRTMP'
+GO
+
+CREATE PROCEDURE pa_getGarden
+	@gardenId varchar(8)
+AS
+	DECLARE @datedif int;
+	SET @datedif = DATEDIFF(SECOND,(select TOP 1 r_timestamp from readings where r_garden = @gardenId order by r_timestamp desc), CURRENT_TIMESTAMP);
+	
+	SELECT g_ID, 
+	g_createdAt, 
+	g_name, 
+	g_description,
+		CASE 
+			WHEN @datedif > 60 THEN 0
+			WHEN @datedif <= 60 THEN 1
+		END as 
+	g_online
+	FROM gardens
+	WHERE g_ID = @gardenId
+GO
+
+ALTER PROCEDURE pa_gardensUser
+	@user_id int
+as
+	
+	SELECT g_ID, 
+	g_createdAt, 
+	g_name, 
+	g_description,
+	CASE 
+			WHEN DATEDIFF(SECOND,(select TOP 1 r_timestamp from readings where r_garden = g_id order by r_timestamp desc), CURRENT_TIMESTAMP) is null THEN 0
+			WHEN DATEDIFF(SECOND,(select TOP 1 r_timestamp from readings where r_garden = g_id order by r_timestamp desc), CURRENT_TIMESTAMP) > 60 THEN 0
+			WHEN DATEDIFF(SECOND,(select TOP 1 r_timestamp from readings where r_garden = g_id order by r_timestamp desc), CURRENT_TIMESTAMP) <= 60 THEN 1
+		END as 
+	g_online
+	from garden_user
+	join gardens on gu_garden = g_ID
+	where gu_user = @user_id;
+go
+
+EXECUTE pa_gardensUser 1
+
+select DATEDIFF(SECOND,(select TOP 1 r_timestamp from readings where r_garden = 'SG21AA01' order by r_timestamp desc), CURRENT_TIMESTAMP)
