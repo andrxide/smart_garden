@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart_Garden", "Smart_Garden\Smart_Garden.csproj", "{31B725DA-7C57-4F4C-853E-E9EC7DE8D4C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31B725DA-7C57-4F4C-853E-E9EC7DE8D4C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31B725DA-7C57-4F4C-853E-E9EC7DE8D4C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31B725DA-7C57-4F4C-853E-E9EC7DE8D4C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31B725DA-7C57-4F4C-853E-E9EC7DE8D4C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52C6A659-2C44-485B-8388-DD2CC881A859}
+	EndGlobalSection
+EndGlobal
