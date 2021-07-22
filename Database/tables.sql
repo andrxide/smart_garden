@@ -57,7 +57,6 @@ create table garden_sensor (
 go
 
 create table readings (
-	r_ID int identity(1,1) not null,
 	r_sensor varchar(5) not null,
 	r_garden varchar(8) not null,
 	r_timestamp datetime not null default current_timestamp,

@@ -7,8 +7,6 @@ join gardens on gu_garden = g_ID
 where gu_user = 1
 go
 
-
-
 CREATE PROCEDURE pa_sensorType
 	@id varchar(3)
 as
