@@ -74,5 +74,3 @@ go
 
 execute pa_getReadings 'SRTMP','SG21AA04', 5
 
-execute pa_getGardenSensor 'SG21AA01','SRTMP'
-
