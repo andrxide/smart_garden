@@ -1,0 +1,38 @@
+{
+    "garden":{
+       "id":"SG21AA02",
+       "createdAt":"2021-07-22T11:37:51",
+       "name":"Garden 2",
+       "description":"",
+       "online":true
+    },
+    "sensor":{
+       "info":{
+          "id":"SRTMP",
+          "type":{
+             "id":"TMP",
+             "description":"temperature sensor (DHT11)",
+             "unit":"°C",
+             "icon":"thermometer"
+          },
+          "name":"Temperature"
+       },
+       "minValue":16,
+       "maxValue":32
+    },
+    "readings":[
+       {
+          "timestamp":"2021-07-22T15:00:00",
+          "value":19.56
+       },
+       {
+          "timestamp":"2021-07-22T14:00:00",
+          "value":20.7
+       },
+       {
+          "timestamp":"2021-07-22T13:00:00",
+          "value":22.5
+       }
+    ],
+    "status":0
+}
