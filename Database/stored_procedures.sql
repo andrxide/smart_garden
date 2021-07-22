@@ -130,11 +130,11 @@ go
 
 CREATE PROCEDURE pa_postReadings
 	@gardenId varchar(8),
-	@tmp float(5),
-	@hmd float(5),
-	@soil float(5),
-	@ph float(5),
-	@bgt float(5)
+	@tmp decimal(18,2),
+	@hmd decimal(18,2),
+	@soil decimal(18,2),
+	@ph decimal(18,2),
+	@bgt decimal(18,2)
 AS
 	INSERT INTO readings (r_sensor, r_garden, r_value) VALUES
 	('SRTMP',@gardenId,@tmp),
@@ -144,7 +144,7 @@ AS
 	('SRBGT',@gardenId,@bgt);
 go
 
-execute pa_postReadings 'SG21AA01',25.65,65,42,4.9,123
+execute pa_postReadings %s, %d, %d, %d 'SG21AA01',25.65,65,42,4.9,123
 GO
 
 execute pa_getGardenSensor 'SG21AA01','SRTMP'
