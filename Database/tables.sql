@@ -60,6 +60,6 @@ create table readings (
 	r_sensor varchar(5) not null,
 	r_garden varchar(8) not null,
 	r_timestamp datetime not null default current_timestamp,
-	r_value float(5)
+	r_value decimal(18,2)
 );
 go

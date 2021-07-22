@@ -2,12 +2,12 @@ use smartGarden;
 go
 
 -- inserciones bases
-insert into sensor_type (st_ID, st_description, st_mark, st_icon) values
+insert into sensor_type (st_ID, st_description, st_unit, st_icon) values
 ('TMP','temperature sensor (DHT11)','°C','thermometer'),
 ('HMD','air humidity sensor (DHT11)','%','tint'),
 ('SHD','soil humidity sensor (Capacitive Soil Moisture Sensor)','%','seeding'),
 ('PHS','pH sensor','','tachometer-alt'),
-('BGT','Brightness sensor (Photoresistor)','cd','sun');
+('BGT','Brightness sensor (Photoresistor)','lux','sun');
 go
 
 insert into sensors (s_ID, s_type, s_name) values
@@ -21,7 +21,7 @@ go
 -- inserciones de prueba
 ------ USERS
 insert into users (u_username, u_password) values
-('test5','asdfghjklqwertyuiopzxcvbnmdfdffffffffffffffffffffff');
+('test1','password');
 insert into users (u_username, u_password) values
 ('test2','abc123');
 insert into users (u_username, u_password) values
@@ -30,17 +30,17 @@ insert into users (u_username, u_password) values
 insert into gardens (g_ID,g_name) values
 ('SG21AA01','Garden 1');
 insert into garden_user (gu_garden,gu_user) values
-('SG21AA01',1);
+('SG21AA01',2);
 
 insert into gardens (g_ID,g_name) values
 ('SG21AA02','Garden 2');
 insert into garden_user (gu_garden,gu_user) values
-('SG21AA02',1);
+('SG21AA02',2);
 
 insert into gardens (g_ID,g_name) values
 ('SG21AA03','Garden 3');
 insert into garden_user (gu_garden,gu_user) values
-('SG21AA03',1);
+('SG21AA03',2);
 
 insert into gardens (g_ID,g_name) values
 ('SG21AA04','Garden a');
@@ -78,3 +78,28 @@ insert into readings (r_sensor,r_garden,r_timestamp,r_value) values
 ('SRTMP','SG21AA04',DATEADD(day, -3, CURRENT_TIMESTAMP),21.8),
 ('SRTMP','SG21AA04',DATEADD(day, -2, CURRENT_TIMESTAMP),25.3),
 ('SRTMP','SG21AA04',DATEADD(day, -1, CURRENT_TIMESTAMP),19.5);
+
+insert into readings (r_sensor,r_garden,r_timestamp,r_value) values
+('SRTMP','SG21AA02',DATEADD(hour, -10, CURRENT_TIMESTAMP),25.5),
+('SRTMP','SG21AA02',DATEADD(hour, -9, CURRENT_TIMESTAMP),28.6),
+('SRTMP','SG21AA02',DATEADD(hour, -8, CURRENT_TIMESTAMP),24.9),
+('SRTMP','SG21AA02',DATEADD(hour, -7, CURRENT_TIMESTAMP),23.7),
+('SRTMP','SG21AA02',DATEADD(hour, -6, CURRENT_TIMESTAMP),22.1),
+('SRTMP','SG21AA02',DATEADD(hour, -5, CURRENT_TIMESTAMP),27.9),
+('SRTMP','SG21AA02',DATEADD(hour, -4, CURRENT_TIMESTAMP),29.6),
+('SRTMP','SG21AA02',DATEADD(hour, -3, CURRENT_TIMESTAMP),21.8),
+('SRTMP','SG21AA02',DATEADD(hour, -2, CURRENT_TIMESTAMP),25.3),
+('SRTMP','SG21AA02',DATEADD(hour, -1, CURRENT_TIMESTAMP),19.5);
+insert into readings (r_sensor,r_garden,r_timestamp,r_value) values
+('SRTMP','SG21AA02',DATEADD(hour, 0, CURRENT_TIMESTAMP),19.5),
+('SRTMP','SG21AA02',DATEADD(hour, 1, CURRENT_TIMESTAMP),19.5),
+('SRTMP','SG21AA02',DATEADD(hour, 2, CURRENT_TIMESTAMP),19.5),
+('SRTMP','SG21AA02',DATEADD(hour, 3, CURRENT_TIMESTAMP),19.5),
+('SRTMP','SG21AA02',DATEADD(hour, 4, CURRENT_TIMESTAMP),19.5);
+
+insert into readings (r_sensor,r_garden,r_timestamp,r_value) values
+('SRTMP','SG21AA02','2021-07-22 14:55:00.000',28.3),
+('SRTMP','SG21AA02','2021-07-22 14:12:25.030',21.0),
+('SRTMP','SG21AA02','2021-07-22 14:54:38.830',27.1),
+('SRTMP','SG21AA02','2021-07-22 14:21:38.830',19.9),
+('SRTMP','SG21AA02','2021-07-22 14:33:38.830',24.3);
