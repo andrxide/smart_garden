@@ -1,0 +1,116 @@
+{
+    "Garden" : {
+        "id" : "SG21AA01",
+        "name" : "Garden 1",
+        "description" : "description ...",
+        "createdAt" : "2021-07-23 12:00:00",
+        "online" : true,
+        "sensors" : [
+            {
+                "id" : "SRTMP",
+                "name" : "Temperature",
+                "type" : {
+                    "id" : "TMP",
+                    "description" : "temperature sensor (dht11)",
+                    "unit" : "oC",
+                    "icon" : "thermometer"
+                },
+                "readings" : [
+                    {
+                        "timestamp" : "2021-07-23 12:00:00",
+                        "value" : 25
+                    }, 
+                    {}
+                ],
+                "values" : {
+                    "min" : 25,
+                    "max" : 32
+                }
+            },
+            {
+                "id" : "SRHMD",
+                "name" : "Humidity",
+                "type" : {
+                    "id" : "HMD",
+                    "description" : "humidity sensor (dht11)",
+                    "unit" : "%",
+                    "icon" : "drop"
+                },
+                "readings" : [
+                    {
+                        "timestamp" : "2021-07-23 12:00:00",
+                        "value" : 50
+                    }, 
+                    {}
+                ],
+                "values" : {
+                    "min" : 50,
+                    "max" : 70
+                }
+            },
+            {
+                "id" : "SRSHD",
+                "name" : "Soil Humidity",
+                "type" : {
+                    "id" : "SHD",
+                    "description" : "soil humidity sensor (dht11)",
+                    "unit" : "%",
+                    "icon" : "drop"
+                },
+                "readings" : [
+                    {
+                        "timestamp" : "2021-07-23 12:00:00",
+                        "value" : 60
+                    }, 
+                    {}
+                ], 
+                "values" : {
+                    "min" : 50,
+                    "max" : 70
+                }
+            },
+            {
+                "id" : "SRPHS",
+                "name" : "pH",
+                "type" : {
+                    "id" : "PHS",
+                    "description" : "pH sensor (dht11)",
+                    "unit" : "",
+                    "icon" : "gauge"
+                },
+                "readings" : [
+                    {
+                        "timestamp" : "2021-07-23 12:00:00",
+                        "value" : 5
+                    }, 
+                    {}
+                ],
+                "values" : {
+                    "min" : 4,
+                    "max" : 5
+                }
+            },
+            {
+                "id" : "SRBGT",
+                "name" : "Brightness",
+                "type" : {
+                    "id" : "BGT",
+                    "description" : "Brightness sensor (dht11)",
+                    "unit" : "",
+                    "icon" : "sun"
+                },
+                "readings" : [
+                    {
+                        "timestamp" : "2021-07-23 12:00:00",
+                        "value" : 50
+                    }, 
+                    {}
+                ],
+                "values" : {
+                    "min" : 120,
+                    "max" : 150
+                }
+            }
+        ]
+    }
+}
