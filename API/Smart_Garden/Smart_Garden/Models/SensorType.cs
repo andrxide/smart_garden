@@ -30,20 +30,5 @@ public class SensorType
         Unit = "";
         Icon = "";
     }
-    public SensorType(string id)
-    {
-        SqlCommand command = new SqlCommand("execute pa_sensorType @ID");
-        command.Parameters.AddWithValue("@ID", id);
-        DataTable table = SqlServerConnection.GetConnection().ExecuteQuery(command);
-        if (table.Rows.Count > 0)
-        {
-            DataRow row = table.Rows[0];
-            Id = row["st_ID"].ToString();
-            Description = row["st_description"].ToString();
-            Unit = row["st_unit"].ToString();
-            Icon = row["st_icon"].ToString();
-        }
-        else throw new RecordNotFoundException(id);
-    }
     #endregion
 }

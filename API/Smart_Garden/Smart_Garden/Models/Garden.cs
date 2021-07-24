@@ -35,23 +35,6 @@ public class Garden
         Online = online;
         Sensors = sensors;
     }
-    /*public Garden(string id)
-    {
-        SqlCommand command = new SqlCommand("EXECUTE pa_getGarden @ID");
-        command.Parameters.AddWithValue("@ID", id);
-        DataTable table = SqlServerConnection.GetConnection().ExecuteQuery(command);
-        if (table.Rows.Count > 0)
-        {
-            DataRow row = table.Rows[0];
-            Id = row["g_ID"].ToString();
-            CreatedAt = DateTime.Parse(row["g_createdAt"].ToString());
-            Name = row["g_name"].ToString();
-            Description = row["g_description"].ToString();
-            if ((int)row["g_online"] == 1) Online = true;
-            else Online = false;
-            Sensors = Sensor.GetAll(row["g_ID"].ToString());
-        }
-    }*/
     #endregion
 
     #region methods

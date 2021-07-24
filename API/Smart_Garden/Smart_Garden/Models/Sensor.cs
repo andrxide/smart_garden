@@ -30,21 +30,6 @@ public class Sensor
         Name = "";
         Values = Values;
     }
-    /*public Sensor(string sensorId, string gardenId)
-    {
-        SqlCommand command = new SqlCommand("execute pa_sensor @ID");
-        command.Parameters.AddWithValue("@ID", sensorId);
-        DataTable table = SqlServerConnection.GetConnection().ExecuteQuery(command);
-        if (table.Rows.Count > 0)
-        {
-            DataRow row = table.Rows[0];
-            Id = row["s_ID"].ToString();
-            Type = new SensorType(row["s_type"].ToString());
-            Name = row["s_name"].ToString();
-            Current = new Reading(sensorId, gardenId);
-        }
-        else throw new RecordNotFoundException(sensorId);
-    }*/
     #endregion
 
     
