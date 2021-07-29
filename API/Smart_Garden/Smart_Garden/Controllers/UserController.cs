@@ -13,44 +13,19 @@ namespace Smart_Garden.Controllers
     public class UserController : ControllerBase
     {
          // GET api/<UserController>
-        [HttpGet]
-        public ActionResult Get([FromBody]User user)
+        [HttpGet("{username}/{password}")]
+        public ActionResult Get(string username, string password)
         {
             try
             {
-                User u = new User(user.Username, user.Password);
                 UserViewModel vm = new UserViewModel
                 {
                     Status = 0,
-                    User = u
+                    User = new User(username, password)
                 };
                 return Ok(vm);
             }
             catch (UserNotFoundException e)
-            {
-                ErrorViewModel evm = new ErrorViewModel
-                {
-                    Status = 1,
-                    ErrorMessage = e.Message
-                };
-                return Ok(evm);
-            }
-        }
-
-        // POST api/<UserController>
-        [HttpPost]
-        public ActionResult Post([FromBody] User newUser)
-        {
-            try
-            {
-                newUser.Add(newUser.Username, newUser.Password);
-                UserViewModel vm = new UserViewModel
-                {
-                    Status = 0
-                };
-                return Ok(vm);
-            }
-            catch (InsertException e)
             {
                 ErrorViewModel evm = new ErrorViewModel
                 {
