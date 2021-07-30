@@ -1,2 +1,20 @@
 <app-navbar></app-navbar>
-<div class="container"></div>
+<div class="container pt-4">
+    <div class="row row-cols-1 row-cols-md-3 g-3">
+        <div class="col" *ngFor="let garden of gardens">
+            <div class="card h-100">
+                <div class="card-header">
+                    <span><i class="bi bi-circle-fill text-success"></i></span>
+                    <span class="text-secondary ms-3">Available</span>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Garden 1</h5>
+                    <p class="card-text">Aqui va la descripcion del jardin, el usuario podra poner una breve informacion que le sera util para identificarlo.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">SG21AA01</small>                                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

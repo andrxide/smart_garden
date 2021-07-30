@@ -31,7 +31,7 @@ namespace Smart_Garden
                 options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:4200", "http://smartgarden1.somee.com/");
+                        builder.WithOrigins("http://localhost:4200");
                     });
             });
 

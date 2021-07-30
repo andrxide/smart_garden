@@ -18,9 +18,8 @@ export class LoginComponent {
   }
 
   login() {
-    console.log(this.username);
-    console.log(this.password);
     this.service.get(this.username, this.password).subscribe(data => {
+      if(data.status !== 0 || typeof(data.status) === 'undefined') return;
       localStorage.setItem('userId', data.user.id.toString());
       this.router.navigateByUrl('/');
     });
